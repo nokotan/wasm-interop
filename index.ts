@@ -1,7 +1,4 @@
-import { getMemorySlice } from "./cpplib/Main.wasm";
-import { construct } from "wasm-interop/lib/String.js";
+import { Worker } from "node:worker_threads";
+import { foo } from "./cpplib/Main.wasm";
 
-const memory = getMemorySlice();
-const text = construct(memory);
-
-console.log(text);
+console.log(foo());
